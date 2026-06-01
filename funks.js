@@ -15,6 +15,7 @@ cube.addEventListener('mousedown', (e) => {
 
 window.addEventListener('mouseup', () => {
     isDragging = false;
+    // console.log(`X: ${rotateX} / Y: ${rotateY}`);
 });
 
 window.addEventListener('mousemove', (e) => {
@@ -23,8 +24,8 @@ window.addEventListener('mousemove', (e) => {
     const deltaX = e.clientX - previousX;
     const deltaY = e.clientY - previousY;
 
-    rotateY += deltaX * 0.5;
-    rotateX -= deltaY * 0.5;
+    rotateY += deltaX * 0.15;
+    rotateX -= deltaY * 0.15;
 
     cube.style.transform =
         `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
@@ -32,3 +33,44 @@ window.addEventListener('mousemove', (e) => {
     previousX = e.clientX;
     previousY = e.clientY;
 });
+
+function rodar(pos)
+{
+    let new_pos_x = 0
+    let new_pos_y = 0
+
+    switch (pos) {
+        case 1:
+            rotateX = 0;
+            rotateY = 0;
+            break;
+        case 2:
+            rotateX = 0;
+            rotateY = 180;
+            break;
+        case 3:
+            rotateX = 0;
+            rotateY = 270;
+            break;
+        case 4:
+            rotateX = 0;
+            rotateY = 90;
+            break;
+        case 5:
+            rotateX = -90;
+            rotateY = 0;
+            break;
+        case 6:
+            rotateX = 90;
+            rotateY = 0;
+            break;
+    }
+    function rotacionar()
+    {
+
+    }
+    requestAnimationFrame(rotacionar)
+
+    cube.style.transform =
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+}

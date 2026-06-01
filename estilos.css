@@ -21,13 +21,13 @@ body {
 
 .scene {
   perspective: 800px;
-  width: 100px;
-  height: 100px;
+  width: 400px;
+  height: 400px;
 }
 
 .cube {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   position: relative;
   transform-style: preserve-3d;
   cursor: grab;
@@ -41,8 +41,8 @@ body {
 
 .face {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,27 +54,50 @@ body {
 
 /* metade da largura = 100px */
 .front {
-  transform: translateZ(100px);
+  transform: translateZ(200px);
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  align-content: center;
+  justify-content: baseline;
+  padding: 250px 10px 0 0;
 }
 
 .back {
-  transform: rotateY(180deg) translateZ(100px);
+  transform: rotateY(180deg) translateZ(200px);
 }
 
 .right {
-  transform: rotateY(90deg) translateZ(100px);
+  transform: rotateY(90deg) translateZ(200px);
 }
 
 .left {
-  transform: rotateY(-90deg) translateZ(100px);
+  transform: rotateY(-90deg) translateZ(200px);
 }
 
 .top {
-  transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(200px);
 }
 
 .bottom {
-  transform: rotateX(-90deg) translateZ(100px);
+  transform: rotateX(-90deg) translateZ(200px);
 }
 
-/* ... (left, right, top, bottom mapped similarly) *//*# sourceMappingURL=estilos.css.map */
+/* ... (left, right, top, bottom mapped similarly) */
+.rodar_btns {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  left: 0;
+  top: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 50px;
+  position: absolute;
+}
+.rodar_btns button {
+  width: 100px;
+  height: 50px;
+}/*# sourceMappingURL=estilos.css.map */
