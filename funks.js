@@ -10,12 +10,14 @@ let rotateY = 30;
 
 cube.addEventListener('mousedown', (e) => {
     isDragging = true;
+    document.body.style.userSelect = 'none';
     previousX = e.clientX;
     previousY = e.clientY;
 });
 
 window.addEventListener('mouseup', () => {
     isDragging = false;
+    document.body.style.userSelect = '';
     // console.log(`X: ${rotateX} / Y: ${rotateY}`);
 });
 
